@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-[#222222] bg-white antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+}
+
+/* Prevent horizontal overflow from breaking mx-auto centering.
+   overflow-x: clip is stronger: it clips without creating a new scroll container,
+   so fixed-position children still work correctly. */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  overflow-y: scroll; /* always show scrollbar so layout is stable */
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+/* Root containment: mx-auto centering uses this element's width as reference */
+#root {
+  max-width: 100vw;
+  overflow-x: clip;
+  position: relative;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Hide scrollbar for category tabs while maintaining scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
