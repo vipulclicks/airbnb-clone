@@ -99,18 +99,3 @@ bash package-submission.sh
 Automatically generates `airbnb_clone_submission.zip` containing all code, architecture diagrams, prompt logs, and sub-agent configs.
 
 ---
-
-## 🌐 Deploying to GitHub Pages
-
-The application is configured with `base: './'` in `vite.config.ts`, making it 100% compatible with static hosting on GitHub Pages:
-
-1. Create a **Private** repository on GitHub (per the take-home submission instructions).
-2. Push this repository to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "feat: airbnb clone implementation"
-   git remote add origin git@github.com:YOUR_USERNAME/YOUR_PRIVATE_REPO.git
-   git push -u origin main
-   ```
-3. In GitHub Repository Settings -> **Pages** -> Source: **GitHub Actions** (using the standard Vite static deploy workflow).
